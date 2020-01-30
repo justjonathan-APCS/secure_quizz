@@ -33,15 +33,15 @@ def renderPage2():
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
     total = 0
-    if request.form['q2'] is "false"
+    if request.form['q2'] is "false":
         session['response2']="Correct"
         total+=50
-    else
+    else:
         session['response2']="Incorrect"
-    if session['answer1'] is "false"
+    if session['answer1'] is "false":
         session['response1']="Correct"
         total+=50
-    else
+    else:
         session['response1']="Incorrect"
 
     return render_template('page3.html')
