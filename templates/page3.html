@@ -1,1 +1,15 @@
+{% extends "layout.html" %}
 
+{% block title %}Page 1: Name{% endblock %}
+
+{% block content %}
+  <h1>Page 1: What is the capital of?</h1>
+
+ <form action="/page2" method="POST">
+  The largest country in Africa the DCR:<br>
+  <input type="submit" name="t" value="true">
+  <input type="submit" name="f" value="false">
+ </form>
+
+
+{% endblock %}

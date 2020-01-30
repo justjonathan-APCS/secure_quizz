@@ -1,19 +1,20 @@
-{% extends "layout.html" %}
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
 
-{% block title %}Page 1: Name{% endblock %}
+<body>
 
-{% block content %}
-  <h1>Page 1: What is your name?</h1>
+<div id="content">{% block content %}{% endblock %}</div>
 
- <form action="/page2" method="POST">
-  First name:<br>
-  <input type="text" name="firstName">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastName">
-  <input type="submit" value="Submit">
- </form> 
+<div id="footer">
 
+ <a href="/startOver">Start over</a>
 
-{% endblock %}
+</div>
 
+</body>
+
+</html>
