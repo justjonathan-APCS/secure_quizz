@@ -1,15 +1,16 @@
 {% extends "layout.html" %}
 
-{% block title %}Page 1: Name{% endblock %}
+{% block title %}Page 3--Now we know everything!{% endblock %}
 
 {% block content %}
-  <h1>Page 1: What is the capital of?</h1>
+  <h1>Now I know:</h1>
 
- <form action="/page2" method="POST">
-  The largest country in Africa the DCR:<br>
-  <input type="submit" name="t" value="true">
-  <input type="submit" name="f" value="false">
- </form>
+<ul>
+ <li> Your first answer was:  {{session["response1"]}}</li>
+ <li> Your  second answer was:  {{session["response2"]}}</li>
+ <li> Your total score was:  {{total}}%</li>
+</ul>
+
 
 
 {% endblock %}
