@@ -19,7 +19,7 @@ def renderMain():
 @app.route('/startOver')
 def startOver():
     session.clear()
-    return redirect(url_for('rendermain'))
+    return redirect(url_for('renderMain'))
 
 @app.route('/page1')
 def renderPage1():
