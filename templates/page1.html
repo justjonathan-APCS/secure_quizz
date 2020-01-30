@@ -1,1 +1,15 @@
+{% extends "layout.html" %}
 
+{% block title %}Page 1: Name{% endblock %}
+
+{% block content %}
+  <h1>Page 1: What is the capital of?</h1>
+
+ <form action="/page2" method="POST">
+  Is the capital of Taiwann Bangkok:<br>
+  <input type="submit" name="button_1" value="true">
+  <input type="submit" name="button_1" value="false">
+ </form>
+
+
+{% endblock %}
