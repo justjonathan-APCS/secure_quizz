@@ -36,7 +36,7 @@ def renderPage3():
     total = 0
     if 'answer2' not in session:
         session['answer2'] = request.form['q2']
-    if request.form['q2'] == "false":
+    if session['answer2'] == "false":
         session['response2']="Correct"
         total+=50
     else:
