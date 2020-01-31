@@ -27,14 +27,14 @@ def renderPage1():
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    if 'answer1' not in session
+    if 'answer1' not in session:
         session['answer1'] = request.form['q1']
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
     total = 0
-    if 'answer2' not in session
+    if 'answer2' not in session:
         if request.form['q2'] == "false":
             session['response2']="Correct"
             total+=50
