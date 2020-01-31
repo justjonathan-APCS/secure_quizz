@@ -35,17 +35,17 @@ def renderPage2():
 def renderPage3():
     total = 0
     if 'answer2' not in session:
-        if request.form['q2'] == "false":
-            session['response2']="Correct"
-            total+=50
-        else:
-            session['response2']="Incorrect"
-            if session['answer1'] == "false":
-                session['response1']="Correct"
-                total+=50
-            else:
-                session['response1']="Incorrect"
-        print(total)
+        session['answer2'] = request.form['q2']
+    if request.form['q2'] == "false":
+        session['response2']="Correct"
+        total+=50
+    else:
+        session['response2']="Incorrect"
+    if session['answer1'] == "false":
+        session['response1']="Correct"
+        total+=50
+    else:
+        session['response1']="Incorrect"
     return render_template('page3.html', total=total)
 
 if __name__=="__main__":
