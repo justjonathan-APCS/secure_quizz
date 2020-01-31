@@ -45,6 +45,7 @@ def renderPage3():
                 total+=50
             else:
                 session['response1']="Incorrect"
+        print(total)
     return render_template('page3.html', total=total)
 
 if __name__=="__main__":
