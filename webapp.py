@@ -27,24 +27,25 @@ def renderPage1():
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session['answer1'] = request.form['q1']
+    if 'answer1' not in session
+        session['answer1'] = request.form['q1']
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
     total = 0
-    if request.form['q2'] == "false":
-        session['response2']="Correct"
-        total+=50
-    else:
-        session['response2']="Incorrect"
-    if session['answer1'] == "false":
-        session['response1']="Correct"
-        total+=50
-    else:
-        session['response1']="Incorrect"
-
-    return render_template('page3.html')
+    if 'answer2' not in session
+        if request.form['q2'] == "false":
+            session['response2']="Correct"
+            total+=50
+        else:
+            session['response2']="Incorrect"
+            if session['answer1'] == "false":
+                session['response1']="Correct"
+                total+=50
+            else:
+                session['response1']="Incorrect"
+    return render_template('page3.html', total=total)
 
 if __name__=="__main__":
     app.run(debug=False)
